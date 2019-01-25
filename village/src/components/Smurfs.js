@@ -25,4 +25,34 @@ const SmurfContainer = styled.div`
   padding: 5px;
 `;
 
+class Smurfs extends Component {
+  render() {
+    return (
+      <div>        
+        <h1>Smurf Village</h1>
+          <SmurfsContainer>
+              {this.props.smurfs.map(smurf => {
+                return (
+                  <SmurfContainer>
+                    <Smurf
+                      name={smurf.name}
+                      id={smurf.id}
+                      age={smurf.age}
+                      height={smurf.height}
+                      key={smurf.id}
+                    />
+                    <button onClick={() => this.props.delete(smurf.id)}>☠️ Smurf</button>
+                  </SmurfContainer>
+                );
+              })}
+          </SmurfsContainer>
+      </div>
+    );
+  }
+}
 
+Smurf.defaultProps = {
+ smurfs: [],
+};
+
+export default Smurfs;
