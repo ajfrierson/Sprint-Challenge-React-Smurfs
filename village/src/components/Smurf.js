@@ -1,9 +1,10 @@
 import React from 'react';
+
 import styled from 'styled-components';
 
-const Smurf = props => {
+const Smurf = (props) => {
   return (
-    <div className="Smurf">
+    <div>
       <h3>{props.name}</h3>
       <strong>{props.height} tall</strong>
       <p>{props.age} smurf years old</p>
