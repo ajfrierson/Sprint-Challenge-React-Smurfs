@@ -30,6 +30,19 @@ class App extends Component {
     this.props.history.push('/')
   }
 
+  deleteSmurf = (id) => {
+    axios
+        .delete(`http://localhost:3333/smurfs/${id}`)
+        .then(reponse => {
+          this.setState({ smurfs : reponse.data })
+        })
+        .catch(err => {
+          console.log(err)
+        })
+
+    this.props.history.push('/')
+  }
+
   render() {
     return (
       <div className="App">
